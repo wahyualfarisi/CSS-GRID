@@ -9,10 +9,11 @@ body {
 }
 .google-meets {
   display: grid;
+  height: 100vh;
   grid-gap: 5px;
-  grid-template-rows: repeat(3, 240px) 1fr;
+  grid-template-rows: repeat(3, minmax(240px, 1fr)) 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-flow: dense;
+  grid-auto-rows: 240px;
 }
 
 .person {
@@ -28,7 +29,10 @@ body {
   grid-column: 1 / -1;
   font-size: 1.5rem;
   font-weight: 800;
+}
 
-  display: grid;
-  align-items: center;
+@media only screen and (max-width: 600px) {
+  .google-meets {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
