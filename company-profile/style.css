@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start]
+    minmax(6rem, 1fr)
+    [center-start]
+    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+}
+
+.container > * {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.sidebar {
+  background-color: rgb(95, 100, 95);
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+}
+
+.header {
+  background-color: #ddd;
+  grid-column: full-start / col-end 6;
+}
+
+.realtors {
+  background-color: #eee;
+  grid-column: col-start 7 / full-end;
+}
+.features {
+  background-color: rgb(134, 125, 125);
+  grid-column: center-start / center-end;
+}
+
+.story__picture {
+  background-color: khaki;
+  grid-column: full-start / col-end 4;
+}
+
+.story__content {
+  background-color: palegreen;
+  grid-column: col-start 5 / full-end;
+}
+
+.homes {
+  background-color: peru;
+  grid-column: center-start / center-end;
+}
+
+.gallery {
+  background-color: orangered;
+  grid-column: full-start / full-end;
+}
+
+.footer {
+  background-color: palevioletred;
+  grid-column: full-start / full-end;
+}
