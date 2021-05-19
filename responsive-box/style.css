@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  display: grid;
+  width: 90%;
+  margin: 8rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-rows: repeat(5, 8rem);
+  grid-gap: 2rem;
+  grid-auto-rows: 8rem;
+}
+
+.box {
+  background-color: #f6f6f6;
+}
